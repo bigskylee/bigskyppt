@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     gsap.registerPlugin(MotionPathPlugin)
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= 600) {
         // 비행기 날아가는 경로
         gsap.to('.paper', {
             duration: 6,
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 start: 0, // 시작 위치 (0%)
                 end: 1, // 종료 위치 (100%)
                 ease: 'linear', // 선형 이징
+                invalidateOnRefresh: true,
             },
         })
     } else {
@@ -26,19 +27,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             duration: 5,
             motionPath: {
                 path: [
-                    { x: -175, y: -25 },
-                    { x: -200, y: -50 },
-                    { x: -175, y: -75 },
-                    { x: -150, y: -70 },
-                    { x: -175, y: -55 },
-                    { x: -200, y: -50 },
-                    { x: -250, y: -55 },
-                    { x: -400, y: -60 },
+                    { x: -375, y: -25 },
+                    { x: -400, y: -50 },
+                    { x: -375, y: -75 },
+                    { x: -350, y: -70 },
+                    { x: -375, y: -55 },
+                    { x: -400, y: -50 },
+                    { x: -450, y: -55 },
+                    { x: -700, y: -60 },
                 ],
                 autoRotate: true,
                 start: 0,
                 end: 1,
                 ease: 'linear',
+                invalidateOnRefresh: true,
             },
         })
     }
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .to('.t8', { opacity: 1, duration: 0.1 })
         .to('.t7', { opacity: 1, duration: 0.1 })
         .to('.t6', { opacity: 1, duration: 0.1 })
-        .to('.t5', { opacity: 1, duration: 0.1 }, '=0.8')
+        .to('.t5', { opacity: 1, duration: 0.1 }, '=0.4')
         .to('.t4', { opacity: 1, duration: 0.1 })
         .to('.t3', { opacity: 1, duration: 0.1 })
         .to('.t2', { opacity: 1, duration: 0.1 })
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             markers: true, //개발가이드선
             toggleActions: 'play none none reset',
         },
+        invalidateOnRefresh: true,
     })
     stl.to('.name', {
         opacity: 1,
@@ -109,4 +112,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //         containerAnimation: scrollTween, // <-- NEW!!
     //     },
     // })
+})
+
+var swiper = new Swiper('.mySwiper', {
+    pagination: {
+        el: '.swiper-pagination',
+    },
 })
