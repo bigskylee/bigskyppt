@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             trigger: '.main1', //실행 기준
             start: '0% 80%', //시작 지점
             end: '0% 80%', //끝 지점
-            markers: true, //개발가이드선
+            markers: false, //개발가이드선
             toggleActions: 'play none none reset',
         },
         invalidateOnRefresh: true,

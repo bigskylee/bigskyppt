@@ -23,8 +23,6 @@ body {
 }
 
 .main {
-    // background-image: url('./../imgs/sky.jpg');
-    // background-size: cover;
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -145,6 +143,9 @@ body {
     #autoslide2 {
         display: none;
     }
+    .main1 .inner .txt {
+        font-size: 1.2rem;
+    }
 }
 @include tabletMore {
     body {
@@ -172,8 +173,14 @@ body {
             left: 0px;
         }
     }
-    #autoslide2 {
-        display: none;
+    .skill .autoslide1 {
+        animation-duration: 14s;
+        div {
+            margin: 0px 20px;
+            .skillname {
+                left: -20px;
+            }
+        }
     }
 }
 
@@ -332,7 +339,7 @@ body {
     &:hover {
         animation-play-state: paused;
     }
-    div {
+    .skilld {
         margin: 0px 10px;
         width: 70px;
         height: 70px;
@@ -351,6 +358,24 @@ body {
 .autoslide1 {
     margin-top: 150px;
 }
+.skillname {
+    @include flex();
+    font-size: 0.8rem;
+    position: relative;
+    transition: all 1s;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background: #333333dd;
+    color: #fff;
+    opacity: 0;
+    &:hover {
+        transition: all 0.5s;
+        border-radius: 10%;
+        opacity: 1;
+    }
+}
+
 @keyframes slidelaft {
     0% {
         transform: translateX(20%);

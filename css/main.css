@@ -147,6 +147,9 @@ body {
   #autoslide2 {
     display: none;
   }
+  .main1 .inner .txt {
+    font-size: 1.2rem;
+  }
 }
 @media (min-width: 1024px) {
   body {
@@ -174,8 +177,14 @@ body {
     top: 30px;
     left: 0px;
   }
-  #autoslide2 {
-    display: none;
+  .skill .autoslide1 {
+    animation-duration: 14s;
+  }
+  .skill .autoslide1 div {
+    margin: 0px 20px;
+  }
+  .skill .autoslide1 div .skillname {
+    left: -20px;
   }
 }
 .rkrdjh {
@@ -358,7 +367,7 @@ body {
 .autoslide1:hover {
   animation-play-state: paused;
 }
-.autoslide1 div {
+.autoslide1 .skilld {
   margin: 0px 10px;
   width: 70px;
   height: 70px;
@@ -368,7 +377,7 @@ body {
   border: 1px solid black;
   border-radius: 50%;
 }
-.autoslide1 div:hover {
+.autoslide1 .skilld:hover {
   transition: all 0.5s;
   transform: scale(1.5);
   border-radius: 10%;
@@ -376,6 +385,27 @@ body {
 
 .autoslide1 {
   margin-top: 150px;
+}
+
+.skillname {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  position: relative;
+  transition: all 1s;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.8666666667);
+  color: #fff;
+  opacity: 0;
+}
+.skillname:hover {
+  transition: all 0.5s;
+  border-radius: 10%;
+  opacity: 1;
 }
 
 @keyframes slidelaft {
