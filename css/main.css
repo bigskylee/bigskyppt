@@ -117,7 +117,7 @@ body {
   }
   .main {
     max-height: none;
-    font-size: 10rem;
+    font-size: 8rem;
     min-height: 50rem;
   }
   .main .paper {
@@ -130,12 +130,52 @@ body {
   .main .my {
     position: relative;
     top: 20px;
+    left: -100px;
+  }
+  .main .ppt {
+    position: relative;
+    top: 30px;
+    left: 0px;
+  }
+  .main3 .section {
+    flex-direction: row;
+  }
+  .main3 .section .swiper {
+    height: 70vh;
+    margin-left: 40px;
+  }
+  #autoslide2 {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 2rem;
+  }
+  .main {
+    max-height: none;
+    font-size: 13rem;
+    min-height: 50rem;
+  }
+  .main .paper {
+    position: relative;
+    top: -150px;
+    left: 900px;
+    width: 220px;
+    height: 220px;
+  }
+  .main .my {
+    position: relative;
+    top: 20px;
     left: -200px;
   }
   .main .ppt {
     position: relative;
     top: 30px;
     left: 0px;
+  }
+  #autoslide2 {
+    display: none;
   }
 }
 .rkrdjh {
@@ -152,6 +192,7 @@ body {
 
 .main1 {
   height: 50vh;
+  min-height: 300px;
   background: skyblue;
 }
 .main1 .txt {
@@ -230,7 +271,8 @@ body {
 }
 
 .main2 {
-  height: 100vh;
+  height: 30vh;
+  min-height: 220px;
   background: #fff;
 }
 
@@ -241,7 +283,6 @@ body {
   justify-content: center;
   width: 100vw;
   height: 80vh;
-  min-width: 100vw;
   border-right: 1px solid grey;
 }
 
@@ -279,8 +320,8 @@ body {
 }
 
 .swiper {
-  width: 80%;
-  height: 100%;
+  width: 70%;
+  height: 50vh;
 }
 
 .swiper-slide {
@@ -298,4 +339,117 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.autoslide1 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  max-width: 8000px;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  align-items: center;
+  animation-fill-mode: forwards;
+  animation-name: slidelaft;
+}
+.autoslide1:hover {
+  animation-play-state: paused;
+}
+.autoslide1 div {
+  margin: 0px 10px;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  transition: all 1s;
+  transform: scale(1);
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.autoslide1 div:hover {
+  transition: all 0.5s;
+  transform: scale(1.5);
+  border-radius: 10%;
+}
+
+.autoslide1 {
+  margin-top: 150px;
+}
+
+@keyframes slidelaft {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+.pjtxt {
+  height: 20vh;
+  font-size: 1rem;
+}
+.pjtxt h1 {
+  font-size: 2rem;
+}
+
+.html {
+  background-image: url("./../imgs/logo/html.png");
+}
+
+.css {
+  background-image: url("./../imgs/logo/css.png");
+}
+
+.chart {
+  background-image: url("./../imgs/logo/chart.js.png");
+}
+
+.sass {
+  background-image: url("./../imgs/logo/sass.png");
+}
+
+.node {
+  background-image: url("./../imgs/logo/node.png");
+}
+
+.gsap {
+  background-image: url("./../imgs/logo/gsap.png");
+}
+
+.jqure {
+  background-image: url("./../imgs/logo/jquery.png");
+}
+
+.js {
+  background-image: url("./../imgs/logo/js.png");
+}
+
+.mongo {
+  background-image: url("./../imgs/logo/mongo.png");
+}
+
+.python {
+  background-image: url("./../imgs/logo/python.png");
+}
+
+.java {
+  background-image: url("./../imgs/logo/java.png");
+}
+
+.mysql {
+  background-image: url("./../imgs/logo/mysql.png");
+}
+
+.git {
+  background-image: url("./../imgs/logo/git.png");
+}
+
+.github {
+  background-image: url("./../imgs/logo/github.png");
+}
+
+.django {
+  background-image: url("./../imgs/logo/django.png");
 }/*# sourceMappingURL=main.css.map */
