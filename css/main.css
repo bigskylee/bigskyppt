@@ -68,6 +68,7 @@ a {
   background-image: url("./../imgs/paper-aer.png");
   background-size: cover;
   transform: scaleY(-1);
+  opacity: 0;
 }
 
 .inner {
@@ -149,6 +150,10 @@ a {
     height: 70vh;
     margin-left: 40px;
   }
+  .imabout {
+    margin: 10vh;
+    max-width: 600px;
+  }
   #autoslide2 {
     display: none;
   }
@@ -163,7 +168,7 @@ a {
   .main {
     max-height: none;
     font-size: 13rem;
-    min-height: 50rem;
+    min-height: 45rem;
   }
   .main .paper {
     position: relative;
@@ -190,6 +195,10 @@ a {
   }
   .skill .autoslide1 div .skillname {
     left: -20px;
+  }
+  .imabout {
+    margin: 10vh;
+    max-width: 1200px;
   }
   #main3 .pjtxt {
     width: 45%;
@@ -239,6 +248,7 @@ a {
   justify-content: space-around;
   font-size: 1rem;
   width: 100%;
+  max-width: 300px;
 }
 .imabout .name,
 .imabout .maill,
@@ -317,7 +327,7 @@ a {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background: greenyellow;
+  background: rgba(155, 247, 70, 0.76);
 }
 
 #footer {
@@ -427,6 +437,13 @@ a {
     transform: translateX(-30%);
   }
 }
+#footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .pjtxt {
   display: flex;
   flex-direction: row;
@@ -437,6 +454,9 @@ a {
 }
 .pjtxt h1 {
   font-size: 2rem;
+}
+.pjtxt .inner div {
+  padding: 1px;
 }
 
 #topbutten {
@@ -467,6 +487,26 @@ a {
   width: 100%;
   height: 100%;
   z-index: 3;
+}
+
+.code {
+  font-size: 1.5rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #333;
+  min-width: 100px;
+  width: 10vw;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: #333;
+}
+.link a {
+  color: #fff;
 }
 
 .html {

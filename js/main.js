@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     gsap.registerPlugin(MotionPathPlugin)
+    gsap.to('.paper', {
+        opacity: 1,
+        duration: 0.5,
+    })
     if (window.innerWidth >= 600) {
         // 비행기 날아가는 경로
         gsap.to('.paper', {
             duration: 6,
+
             motionPath: {
                 path: [
                     { x: -900, y: -100 },
@@ -59,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .to('.t3', { opacity: 1, duration: 0.1 })
         .to('.t2', { opacity: 1, duration: 0.1 })
         .to('.t1', { opacity: 1, duration: 0.1 })
-        .to('.paper', { opacity: 0, duration: 0.1 })
+        .to('.paper', { opacity: 0, duration: 0.5 })
 
     gsap.registerPlugin(ScrollTrigger)
     var stl = gsap.timeline({
@@ -76,18 +81,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     stl.to('.name', {
         opacity: 1,
         duration: 0.4,
+        width: 200,
     })
         .to('.maill', {
             opacity: 1,
             duration: 0.4,
+            width: 200,
         })
         .to('.barthday', {
             opacity: 1,
             duration: 0.4,
+            width: 200,
         })
         .to('.sapp', {
             opacity: 1,
             duration: 0.4,
+            width: 200,
         })
 
     let sections = gsap.utils.toArray('.section')

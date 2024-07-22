@@ -60,6 +60,7 @@ a {
         background-image: url('./../imgs/paper-aer.png');
         background-size: cover;
         transform: scaleY(-1);
+        opacity: 0;
     }
 }
 
@@ -144,6 +145,10 @@ a {
             margin-left: 40px;
         }
     }
+    .imabout {
+        margin: 10vh;
+        max-width: 600px;
+    }
     #autoslide2 {
         display: none;
     }
@@ -158,7 +163,7 @@ a {
     .main {
         max-height: none;
         font-size: 13rem;
-        min-height: 50rem;
+        min-height: 45rem;
         .paper {
             position: relative;
             top: -150px;
@@ -185,6 +190,10 @@ a {
                 left: -20px;
             }
         }
+    }
+    .imabout {
+        margin: 10vh;
+        max-width: 1200px;
     }
     #main3 {
         .pjtxt {
@@ -231,6 +240,7 @@ a {
     justify-content: space-around;
     font-size: 1rem;
     width: 100%;
+    max-width: 300px;
     .name,
     .maill,
     .barthday,
@@ -295,7 +305,7 @@ a {
 .pojeat {
     @include flex($jc: flex-start);
     height: 100vh;
-    background: greenyellow;
+    background: rgba(155, 247, 70, 0.76);
 }
 
 #footer {
@@ -397,12 +407,18 @@ a {
     }
 }
 
+#footer {
+    @include flex();
+}
 .pjtxt {
     @include flex();
     height: 20vh;
     font-size: 1rem;
     h1 {
         font-size: 2rem;
+    }
+    .inner div {
+        padding: 1px;
     }
 }
 
@@ -432,6 +448,24 @@ a {
     //background-image: url('./../imgs/logo/github.png');
     //background-size: cover;
 }
+
+.code {
+    font-size: 1.5rem;
+}
+
+.link {
+    @include flex();
+    border: 2px solid #333;
+    min-width: 100px;
+    width: 10vw;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: #333;
+    a {
+        color: #fff;
+    }
+}
+
 .html {
     background-image: url('./../imgs/logo/html.png');
 }
