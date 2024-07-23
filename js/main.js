@@ -78,26 +78,70 @@ document.addEventListener('DOMContentLoaded', (event) => {
         },
         invalidateOnRefresh: true,
     })
-    stl.to('.name', {
-        opacity: 1,
-        duration: 0.4,
-        width: 200,
-    })
-        .to('.maill', {
+    if (window.innerWidth >= 1200) {
+        stl.to('.name', {
             opacity: 1,
             duration: 0.4,
-            width: 200,
+            width: '25vw',
         })
-        .to('.barthday', {
+            .to('.maill', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+            .to('.barthday', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+            .to('.sapp', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+    } else if (window.innerWidth >= 600) {
+        stl.to('.name', {
             opacity: 1,
             duration: 0.4,
-            width: 200,
+            width: '25vw',
         })
-        .to('.sapp', {
+            .to('.maill', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+            .to('.barthday', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+            .to('.sapp', {
+                opacity: 1,
+                duration: 0.4,
+                width: '25vw',
+            })
+    } else {
+        stl.to('.name', {
             opacity: 1,
             duration: 0.4,
-            width: 200,
+            width: '20vw',
         })
+            .to('.maill', {
+                opacity: 1,
+                duration: 0.4,
+                width: '20vw',
+            })
+            .to('.barthday', {
+                opacity: 1,
+                duration: 0.4,
+                width: '20vw',
+            })
+            .to('.sapp', {
+                opacity: 1,
+                duration: 0.4,
+                width: '20vw',
+            })
+    }
 
     let sections = gsap.utils.toArray('.section')
     // let scrollTween =
@@ -128,3 +172,14 @@ var swiper = new Swiper('.mySwiper', {
         el: '.swiper-pagination',
     },
 })
+
+// var abouticons = document.getElementsByClassName('abouticon')
+
+// window.addEventListener('resize', function () {
+//     if (window.innerWidth >= 1200) {
+//         for (var i = 0; i > abouticons.length; i++) {
+//             var abouticon = abouticons[i]
+//             abouticon.style.width = '200'
+//         }
+//     }
+// })

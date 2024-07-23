@@ -1,3 +1,5 @@
+// body default
+
 html {
     overflow-x: hidden;
 }
@@ -12,10 +14,48 @@ a {
     text-decoration-line: none;
     color: #333;
 }
-.skip {
-    position: relative;
+.inner {
+    padding-left: $spacer-7;
+    padding-right: $spacer-7;
+}
+@include mobileMore {
+    body {
+        font-size: 1.2rem;
+    }
+}
+@include tabletMore {
+    body {
+        font-size: 2rem;
+    }
 }
 
+// skip
+.skip {
+    position: relative;
+    z-index: 3000;
+
+    a {
+        position: absolute;
+        top: -35px;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        padding: 7px 10px 5px;
+        background: #333;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        opacity: 0;
+
+        &:focus {
+            top: 0;
+            opacity: 1;
+            z-index: 1000;
+        }
+    }
+}
+
+// background-image
 .backimg {
     background-image: url('./../imgs/sky.jpg');
     background-size: cover;
@@ -25,8 +65,39 @@ a {
     width: 100vw;
     height: 100vh;
 }
+// header
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    font-size: 1rem;
+    .hade {
+        background: white;
+        .inner {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    a {
+        margin: 0px 20px;
+    }
+}
+@include mobileMore {
+    #header {
+        font-size: 1.4rem;
+    }
+}
+@include tabletMore {
+    #header {
+        font-size: 2rem;
+    }
+}
+
+// main
 
 .main {
+    user-select: none;
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -64,58 +135,12 @@ a {
     }
 }
 
-.inner {
-    padding-left: $spacer-7;
-    padding-right: $spacer-7;
-}
-
-.skip {
-    position: relative;
-    z-index: 3000;
-
-    a {
-        position: absolute;
-        top: -35px;
-        left: 0;
-        right: 0;
-        display: inline-block;
-        padding: 7px 10px 5px;
-        background: #333;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-        opacity: 0;
-
-        &:focus {
-            top: 0;
-            opacity: 1;
-            z-index: 1000;
-        }
-    }
-}
-
-#header {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    .hade {
-        background: white;
-        .inner {
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-}
-
 .titel span {
     position: relative;
     opacity: 0;
 }
 
 @include mobileMore {
-    body {
-        font-size: 1.2rem;
-    }
     .main {
         max-height: none;
         font-size: 8rem;
@@ -138,28 +163,8 @@ a {
             left: 0px;
         }
     }
-    .main3 .section {
-        flex-direction: row;
-        .swiper {
-            height: 70vh;
-            margin-left: 40px;
-        }
-    }
-    .imabout {
-        margin: 10vh;
-        max-width: 600px;
-    }
-    #autoslide2 {
-        display: none;
-    }
-    .main1 .inner .txt {
-        font-size: 1.2rem;
-    }
 }
 @include tabletMore {
-    body {
-        font-size: 2rem;
-    }
     .main {
         max-height: none;
         font-size: 13rem;
@@ -182,41 +187,9 @@ a {
             left: 0px;
         }
     }
-    .skill .autoslide1 {
-        animation-duration: 14s;
-        div {
-            margin: 0px 20px;
-            .skillname {
-                left: -20px;
-            }
-        }
-    }
-    .imabout {
-        margin: 10vh;
-        max-width: 1200px;
-    }
-    #main3 {
-        .pjtxt {
-            width: 45%;
-        }
-        .swiper {
-            width: 55%;
-        }
-    }
 }
 
-.rkrdjh {
-    width: 100px;
-    height: 100px;
-    background-image: url('./../imgs/paper-aer.png');
-    background-size: cover;
-}
-
-.profile {
-    width: 100%;
-    height: 20rem;
-}
-
+// main1
 .main1 {
     height: 50vh;
     min-height: 300px;
@@ -225,7 +198,6 @@ a {
         font-size: 0.9rem;
     }
 }
-
 .abtitle {
     text-align: center;
 }
@@ -240,111 +212,114 @@ a {
     justify-content: space-around;
     font-size: 1rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
+    margin: 15px;
     .name,
     .maill,
     .barthday,
     .sapp {
         padding: auto;
         opacity: 0;
-        @include flex();
-        border-radius: 50%/100%; /* 50%로 설정하여 원 모양의 테두리 생성 */
-        border: 2px solid black; /* 원의 테두리 스타일 설정 */
+        @include flex($jc: space-around);
+        border-radius: 50%/100%;
+        border: 2px solid black;
         overflow: hidden;
         padding: 10px 30px;
         background: #fff;
+        max-width: 130px;
     }
 }
-.user {
-    background-image: url('./../imgs/user.png');
-    background-size: cover;
-    width: 20px;
-    height: 20px;
-}
-.maillicon {
-    background-image: url('./../imgs/maill.png');
-    background-size: cover;
-    width: 20px;
-    height: 20px;
-}
-.whatsapp {
-    background-image: url('./../imgs/whatsapp.png');
-    background-size: cover;
-    width: 20px;
-    height: 20px;
-}
-.calendar {
-    background-image: url('./../imgs/calendar.png');
+.abouticon {
     background-size: cover;
     width: 20px;
     height: 20px;
 }
 .atxt {
+    font-size: 0.6rem;
+    text-align: center;
+    width: 80px;
     p {
         font-weight: 700;
         margin: 0;
     }
 }
 
+@include mobileMore {
+    .main1 {
+        height: 30vh;
+        min-height: 380px;
+        max-height: 600px;
+        .inner .txt {
+            font-size: 1.3rem;
+        }
+        .abouticon {
+            width: 30px;
+            height: 30px;
+        }
+        .imabout {
+            margin: 2vh;
+            max-width: 600px;
+        }
+        .name,
+        .maill,
+        .barthday,
+        .sapp {
+            max-width: 220px;
+        }
+    }
+    .atxt {
+        font-size: 0.9rem;
+        width: 120px;
+    }
+}
+@include tabletMore {
+    .main1 {
+        height: 40vh;
+        .inner .txt {
+            font-size: 1.8rem;
+        }
+        .abouticon {
+            width: 40px;
+            height: 40px;
+        }
+        .imabout {
+            margin: 4vh;
+            max-width: 1200px;
+        }
+        .name,
+        .maill,
+        .barthday,
+        .sapp {
+            max-width: 200px;
+        }
+    }
+    .atxt {
+        width: 160px;
+        font-size: 1rem;
+    }
+}
+.user {
+    background-image: url('./../imgs/user.png');
+}
+.maillicon {
+    background-image: url('./../imgs/maill.png');
+}
+.whatsapp {
+    background-image: url('./../imgs/whatsapp.png');
+}
+.calendar {
+    background-image: url('./../imgs/calendar.png');
+}
+
+//main2
 .main2 {
-    height: 30vh;
+    height: 26vh;
     min-height: 220px;
     background: #fff;
 }
-
-.section {
-    @include flex($fd: column);
-    width: 100vw;
-    height: 80vh;
-    border-right: 1px solid grey;
-}
-.main3 {
-    min-height: 100vh;
-    background: #fff;
-}
-.pojeat {
-    @include flex($jc: flex-start);
-    height: 100vh;
-    background: rgba(155, 247, 70, 0.76);
-}
-
-#footer {
-    height: 200px;
-    background: #333;
-}
-
-.pjimg {
-    background-image: url('./../imgs/cloud.png');
-    background-size: cover;
-    width: 200px;
-    height: 400px;
-}
-
 .skill {
     @include flex($fd: column);
 }
-
-.swiper {
-    width: 70%;
-    height: 50vh;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .autoslide1 {
     position: absolute;
     display: flex;
@@ -358,6 +333,7 @@ a {
     align-items: center;
     animation-fill-mode: forwards;
     animation-name: slidelaft;
+    margin-top: 180px;
     &:hover {
         animation-play-state: paused;
     }
@@ -377,9 +353,15 @@ a {
         }
     }
 }
-.autoslide1 {
-    margin-top: 150px;
+@keyframes slidelaft {
+    0% {
+        transform: translateX(20%);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
 }
+
 .skillname {
     @include flex();
     font-size: 0.8rem;
@@ -398,17 +380,102 @@ a {
     }
 }
 
-@keyframes slidelaft {
-    0% {
-        transform: translateX(20%);
-    }
-    100% {
-        transform: translateX(-30%);
+@include tabletMore {
+    .skill .autoslide1 {
+        animation-duration: 14s;
+        div {
+            margin: 0px 20px;
+            .skillname {
+                left: -20px;
+            }
+        }
     }
 }
+//main3
+.main3 {
+    user-select: none;
+    min-height: 100vh;
+    background: #fff;
+}
+.section {
+    @include flex($fd: column);
+    width: 100vw;
+    height: 80vh;
+    border-right: 1px solid grey;
+}
+.pojeat {
+    @include flex($jc: flex-start);
+    height: 100vh;
+    background: rgba(155, 247, 70, 0.76);
+}
+
+.swiper {
+    width: 70%;
+    height: 50vh;
+    top: -50px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.code {
+    display: none;
+    font-size: 0.8rem;
+    p {
+        margin: 5px;
+    }
+}
+@include mobileMore {
+    .main3 .section {
+        flex-direction: row;
+        .pjtxt {
+            width: 50%;
+            .inner div {
+                font-size: 0.8rem;
+            }
+            .code {
+                display: block;
+            }
+        }
+        .swiper {
+            top: 0;
+            height: 70vh;
+            margin-left: 40px;
+            width: 50%;
+        }
+    }
+}
+@include tabletMore {
+    #main3 {
+        .pjtxt {
+            width: 45%;
+        }
+        .swiper {
+            width: 55%;
+        }
+        .inner div {
+            font-size: 1.1rem;
+        }
+    }
+}
+//footer
 
 #footer {
-    @include flex();
+    @include flex($fd: column);
+    height: 200px;
+    background: #333;
 }
 .pjtxt {
     @include flex();
@@ -416,9 +483,11 @@ a {
     font-size: 1rem;
     h1 {
         font-size: 2rem;
+        margin: 10px 0px;
     }
     .inner div {
-        padding: 1px;
+        padding: 3px;
+        font-size: 0.8rem;
     }
 }
 
@@ -445,12 +514,6 @@ a {
     width: 100%;
     height: 100%;
     z-index: 3;
-    //background-image: url('./../imgs/logo/github.png');
-    //background-size: cover;
-}
-
-.code {
-    font-size: 1.5rem;
 }
 
 .link {
@@ -465,49 +528,9 @@ a {
         color: #fff;
     }
 }
-
-.html {
-    background-image: url('./../imgs/logo/html.png');
-}
-.css {
-    background-image: url('./../imgs/logo/css.png');
-}
-.chart {
-    background-image: url('./../imgs/logo/chart.js.png');
-}
-.sass {
-    background-image: url('./../imgs/logo/sass.png');
-}
-.node {
-    background-image: url('./../imgs/logo/node.png');
-}
-.gsap {
-    background-image: url('./../imgs/logo/gsap.png');
-}
-.jqure {
-    background-image: url('./../imgs/logo/jquery.png');
-}
-.js {
-    background-image: url('./../imgs/logo/js.png');
-}
-.mongo {
-    background-image: url('./../imgs/logo/mongo.png');
-}
-.python {
-    background-image: url('./../imgs/logo/python.png');
-}
-.java {
-    background-image: url('./../imgs/logo/java.png');
-}
-.mysql {
-    background-image: url('./../imgs/logo/mysql.png');
-}
-.git {
-    background-image: url('./../imgs/logo/git.png');
-}
-.github {
-    background-image: url('./../imgs/logo/github.png');
-}
-.django {
-    background-image: url('./../imgs/logo/django.png');
+.tans {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
