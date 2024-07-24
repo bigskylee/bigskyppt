@@ -18,6 +18,9 @@ a {
     padding-left: $spacer-7;
     padding-right: $spacer-7;
 }
+h1 {
+    margin: 15px 0px;
+}
 @include mobileMore {
     body {
         font-size: 1.2rem;
@@ -149,6 +152,7 @@ a {
             position: relative;
             top: -100px;
             left: 900px;
+
             width: 180px;
             height: 180px;
         }
@@ -312,6 +316,35 @@ a {
 }
 
 //main2
+
+.guide {
+    background-color: #ffffffd3;
+    z-index: 5;
+    position: absolute;
+    left: 20vw;
+    margin-bottom: 3rem;
+    opacity: 0;
+}
+.block {
+    position: absolute;
+    border: 1px dashed rgb(85, 85, 85);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    z-index: 3;
+}
+.cursor {
+    background-image: url('./../imgs/cursor.png');
+    background-size: cover;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: -10px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: cursorguide;
+    z-index: 3;
+}
 .main2 {
     height: 26vh;
     min-height: 220px;
@@ -355,10 +388,10 @@ a {
 }
 @keyframes slidelaft {
     0% {
-        transform: translateX(20%);
+        transform: translateX(25%);
     }
     100% {
-        transform: translateX(-30%);
+        transform: translateX(-20.5%);
     }
 }
 
@@ -379,7 +412,11 @@ a {
         opacity: 1;
     }
 }
-
+@include mobileMore {
+    .guide {
+        left: 30vw;
+    }
+}
 @include tabletMore {
     .skill .autoslide1 {
         animation-duration: 14s;
@@ -389,6 +426,9 @@ a {
                 left: -20px;
             }
         }
+    }
+    .guide {
+        left: 35vw;
     }
 }
 //main3

@@ -156,7 +156,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             end: '+=3000',
         },
     })
-
+    var tl2 = gsap.timeline({ repeat: -1, repeatDelay: 1 })
+    if (window.innerWidth >= 1200) {
+        tl2.to('.guide', {
+            duration: 1,
+            opacity: 1,
+        })
+            .to('.cursor', { duration: 1, x: 30, y: 10 })
+            .to('.guide', {
+                duration: 1,
+                opacity: 0,
+            })
+    } else if (window.innerWidth >= 600) {
+        tl.to('.cursor', { duration: 1, x: 30, y: 10, repeat: -1 })
+    } else {
+        tl.to('.cursor', { duration: 1, x: 30, y: 10, repeat: -1 })
+    }
     // gsap.to('.box', {
     //     y: -100,
     //     scrollTrigger: {

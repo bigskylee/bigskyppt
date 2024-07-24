@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>애니메이션으로 객체 중앙에 다른 객체 이동하기</title>
+        <style>
+            .container {
+                position: relative;
+                width: 400px;
+                height: 400px;
+                border: 1px solid #ccc;
+            }
+
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="centeredBox" class="centered">중앙</div>
+        </div>
+
+        <script>
+            var centeredBox = document.getElementById('centeredBox')
+
+            centeredBox.addEventListener('click', function () {
+                moveCenteredBox()
+            })
+
+            function moveCenteredBox() {
+                // 애니메이션을 위해 새로운 위치 계산
+                var container = document.querySelector('.container')
+                var containerRect = container.getBoundingClientRect()
+
+                var newLeft = containerRect.width / 2 - centeredBox.offsetWidth / 2
+                var newTop = containerRect.height / 2 - centeredBox.offsetHeight / 2
+
+                // translate 속성을 이용하여 부드럽게 이동
+                centeredBox.style.transition = 'transform 0.5s ease'
+                centeredBox.style.transform = 'translate(' + newLeft + 'px, ' + newTop + 'px)'
+            }
+        </script>
+    </body>
+</html>
