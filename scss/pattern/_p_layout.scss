@@ -8,6 +8,7 @@ body {
     font-size: 1.2rem;
     background: skyblue;
     margin: 0;
+    cursor: url('./../imgs/bodycursor.png'), auto;
 }
 
 a {
@@ -607,8 +608,4 @@ h1 {
     color: white;
     font-weight: 800;
     margin-bottom: 30px;
-}
-
-.main {
-    cursor: url('./../imgs/bodycursor.png'), auto;
 }
