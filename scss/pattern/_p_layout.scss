@@ -141,6 +141,12 @@ h1 {
 .titel span {
     position: relative;
     opacity: 0;
+    transition: all 1s;
+    font-size: 4rem;
+    &:hover {
+        transition: all 0.5s;
+        font-size: 6rem;
+    }
 }
 
 @include mobileMore {
@@ -167,6 +173,14 @@ h1 {
             left: 0px;
         }
     }
+    .titel span {
+        transition: all 1s;
+        font-size: 8rem;
+        &:hover {
+            transition: all 0.5s;
+            font-size: 12rem;
+        }
+    }
 }
 @include tabletMore {
     .main {
@@ -189,6 +203,14 @@ h1 {
             position: relative;
             top: 30px;
             left: 0px;
+        }
+    }
+    .titel span {
+        transition: all 1s;
+        font-size: 13rem;
+        &:hover {
+            transition: all 0.5s;
+            font-size: 17rem;
         }
     }
 }
@@ -458,7 +480,7 @@ h1 {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #777777;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -467,7 +489,7 @@ h1 {
 .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    //height: 100%;
     object-fit: cover;
 }
 .code {
@@ -475,6 +497,18 @@ h1 {
     font-size: 0.8rem;
     p {
         margin: 5px;
+        font-weight: 700;
+        text-shadow: 1px 1px #fff;
+    }
+}
+.pjtxt {
+    h1 {
+        text-shadow: 1px 1px #fff;
+    }
+    b {
+        margin: 5px;
+        font-weight: 700;
+        text-shadow: 1px 1px #fff;
     }
 }
 @include mobileMore {
@@ -483,7 +517,7 @@ h1 {
         .pjtxt {
             width: 50%;
             .inner div {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
             .code {
                 display: block;
@@ -506,7 +540,7 @@ h1 {
             width: 55%;
         }
         .inner div {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -573,4 +607,8 @@ h1 {
     color: white;
     font-weight: 800;
     margin-bottom: 30px;
+}
+
+.main {
+    cursor: url('./../imgs/bodycursor.png'), auto;
 }

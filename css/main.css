@@ -141,6 +141,12 @@ h1 {
 .titel span {
   position: relative;
   opacity: 0;
+  transition: all 1s;
+  font-size: 4rem;
+}
+.titel span:hover {
+  transition: all 0.5s;
+  font-size: 6rem;
 }
 
 @media (min-width: 600px) {
@@ -166,6 +172,14 @@ h1 {
     top: 30px;
     left: 0px;
   }
+  .titel span {
+    transition: all 1s;
+    font-size: 8rem;
+  }
+  .titel span:hover {
+    transition: all 0.5s;
+    font-size: 12rem;
+  }
 }
 @media (min-width: 1024px) {
   .main {
@@ -189,6 +203,14 @@ h1 {
     position: relative;
     top: 30px;
     left: 0px;
+  }
+  .titel span {
+    transition: all 1s;
+    font-size: 13rem;
+  }
+  .titel span:hover {
+    transition: all 0.5s;
+    font-size: 17rem;
   }
 }
 .main1 {
@@ -489,7 +511,7 @@ h1 {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #777777;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -498,7 +520,6 @@ h1 {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -509,6 +530,17 @@ h1 {
 }
 .code p {
   margin: 5px;
+  font-weight: 700;
+  text-shadow: 1px 1px #fff;
+}
+
+.pjtxt h1 {
+  text-shadow: 1px 1px #fff;
+}
+.pjtxt b {
+  margin: 5px;
+  font-weight: 700;
+  text-shadow: 1px 1px #fff;
 }
 
 @media (min-width: 600px) {
@@ -519,7 +551,7 @@ h1 {
     width: 50%;
   }
   .main3 .section .pjtxt .inner div {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .main3 .section .pjtxt .code {
     display: block;
@@ -539,7 +571,7 @@ h1 {
     width: 55%;
   }
   #main3 .inner div {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 #footer {
@@ -619,6 +651,10 @@ h1 {
   color: white;
   font-weight: 800;
   margin-bottom: 30px;
+}
+
+.main {
+  cursor: url("./../imgs/bodycursor.png"), auto;
 }
 
 .html {
