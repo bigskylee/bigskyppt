@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             motionPath: {
                 path: [
-                    { x: -900, y: -100 },
-                    { x: -1100, y: -200 },
-                    { x: -900, y: -280 },
-                    { x: -800, y: -200 },
-                    { x: -900, y: -180 },
-                    { x: -1100, y: -190 },
-                    { x: -1400, y: -200 },
-                    { x: -2200, y: -250 },
+                    { x: -850, y: -120 },
+                    { x: -1050, y: -220 },
+                    { x: -850, y: -300 },
+                    { x: -750, y: -220 },
+                    { x: -900, y: -200 },
+                    { x: -1050, y: -210 },
+                    { x: -1350, y: -220 },
+                    { x: -2200, y: -270 },
                 ],
                 autoRotate: true,
                 start: 0, // 시작 위치 (0%)
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     }
     var tl = gsap.timeline() //날아가는 비행기에 맞춰 글자 나오기
-    tl.to('.t14', { opacity: 1, duration: 0.1 }, '=0.6')
+    tl.to('.t14', { opacity: 1, duration: 0.1 }, '=0.3')
         .to('.t13', { opacity: 1, duration: 0.1 })
         .to('.t12', { opacity: 1, duration: 0.1 })
         .to('.t11', { opacity: 1, duration: 0.1 })
@@ -59,11 +59,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .to('.t8', { opacity: 1, duration: 0.1 })
         .to('.t7', { opacity: 1, duration: 0.1 })
         .to('.t6', { opacity: 1, duration: 0.1 })
-        .to('.t5', { opacity: 1, duration: 0.1 }, '=0.4')
+        .to('.t5', { opacity: 1, duration: 0.1 }, '=0.6')
         .to('.t4', { opacity: 1, duration: 0.1 })
         .to('.t3', { opacity: 1, duration: 0.1 })
         .to('.t2', { opacity: 1, duration: 0.1 })
         .to('.t1', { opacity: 1, duration: 0.1 })
+        .to('.t0', { opacity: 1, duration: 0.1 })
         .to('.paper', { opacity: 0, duration: 0.5 })
 
     gsap.registerPlugin(ScrollTrigger)
@@ -149,10 +150,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         xPercent: -100 * (sections.length - 1),
         ease: 'none', // <-- IMPORTANT!
         scrollTrigger: {
-            trigger: '.pojeat',
+            trigger: '.poject',
             pin: true,
             scrub: 0.1,
-            //snap: directionalSnap(1 / (sections.length - 1)),
+            start: '0% 5%',
             end: '+=3000',
         },
     })
@@ -172,29 +173,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         tl.to('.cursor', { duration: 1, x: 30, y: 10, repeat: -1 })
     }
-    // gsap.to('.box', {
-    //     y: -100,
-    //     scrollTrigger: {
-    //         trigger: '.box',
-    //         start: 'left center',
-    //         containerAnimation: scrollTween, // <-- NEW!!
-    //     },
-    // })
+
+    window.addEventListener('scroll', function () {
+        console.log(window.scrollY)
+    })
 })
 
 var swiper = new Swiper('.mySwiper', {
+    loop: true,
     pagination: {
         el: '.swiper-pagination',
     },
+    autoplay: {
+        delay: 3000,
+    },
 })
 
-// var abouticons = document.getElementsByClassName('abouticon')
+var logo = document.getElementById('logo:hover')
 
-// window.addEventListener('resize', function () {
-//     if (window.innerWidth >= 1200) {
-//         for (var i = 0; i > abouticons.length; i++) {
-//             var abouticon = abouticons[i]
-//             abouticon.style.width = '200'
-//         }
-//     }
-// })
+setInterval(function () {
+    var color = Math.random() * 0xffffff
+    color = parseInt(color)
+    color = color.toString(16)
+
+    logo.style.color = '#' + color
+}, 100)
