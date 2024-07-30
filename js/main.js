@@ -189,12 +189,38 @@ var swiper = new Swiper('.mySwiper', {
     },
 })
 
-var logo = document.getElementById('logo:hover')
+var logo = document.getElementById('logo')
+let colorChange
 
-setInterval(function () {
+var color1
+var color2
+function randomcolor() {
     var color = Math.random() * 0xffffff
     color = parseInt(color)
     color = color.toString(16)
+    return '#' + color
+}
+function startcolorChange() {
+    logo.style.color = randomcolor()
+    if (!colorChange) {
+        colorChange = setInterval(function () {
+            logo.style.color = randomcolor()
+        }, 1300)
+    }
+}
 
-    logo.style.color = '#' + color
-}, 100)
+function stopcolorChabge() {
+    clearInterval(colorChange)
+    colorChange = null
+}
+logo.addEventListener('mouseenter', () => {
+    color1 = randomcolor()
+    startcolorChange()
+})
+logo.addEventListener('mouseleave', () => {
+    if (colorChange !== null) {
+        clearInterval(colorChange)
+        colorChange = null // Reset colorChange to allow restarting
+    }
+    logo.style.color = '#000'
+})

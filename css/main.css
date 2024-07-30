@@ -99,10 +99,14 @@ h1 {
 }
 #header a {
   margin: 0px 20px;
+  transition: color 0.3s;
   text-shadow: 1px 1px black;
 }
-#header a:hover {
-  color: skyblue;
+
+#logo {
+  color: transparent; /* Make text color transparent */
+  -webkit-background-clip: text; /* Clip gradient to text */
+  background-clip: text;
 }
 
 @media (min-width: 600px) {
