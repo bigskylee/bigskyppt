@@ -174,9 +174,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         tl.to('.cursor', { duration: 1, x: 30, y: 10, repeat: -1 })
     }
 
-    window.addEventListener('scroll', function () {
-        console.log(window.scrollY)
+    const topscrll = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.forder', //실행 기준
+            start: '0% 80%', //시작 지점
+            end: '0% 80%', //끝 지점
+            markers: false, //개발가이드선
+            toggleActions: 'play none none reset',
+        },
     })
+    topscrll.to('.top')
 })
 
 var swiper = new Swiper('.mySwiper', {
