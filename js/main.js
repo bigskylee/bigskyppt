@@ -193,6 +193,7 @@ var swiper = new Swiper('.mySwiper', {
     },
     autoplay: {
         delay: 3000,
+        disableOnInteraction: false,
     },
 })
 
@@ -230,4 +231,29 @@ logo.addEventListener('mouseleave', () => {
         colorChange = null // Reset colorChange to allow restarting
     }
     logo.style.color = '#000'
+})
+
+document.getElementById('loticalvi').addEventListener('click', function () {
+    var youtube = document.getElementById('youtube')
+    youtube.src = 'https://www.youtube.com/embed/iOeHC0UZUZo?si=bzQGeKtWa-m9BKL_'
+})
+document.getElementById('mmbookvi').addEventListener('click', function () {
+    var youtube = document.getElementById('youtube')
+    youtube.src = 'https://www.youtube.com/embed/IajBRjIJc84?si=RzKukKaISWaqGgNl'
+})
+
+document.getElementById('close').addEventListener('click', function () {
+    console.log('close클릭')
+    var tooltep = document.getElementById('tooltep')
+    tooltep.style.display = 'none'
+})
+
+const videos = document.querySelectorAll('.video')
+
+videos.forEach((video) => {
+    video.addEventListener('click', function () {
+        console.log('vedeo클릭')
+        var tooltep = document.getElementById('tooltep')
+        tooltep.style.display = 'flex'
+    })
 })

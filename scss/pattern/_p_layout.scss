@@ -250,12 +250,15 @@ h1 {
 
 // main1
 .main1 {
-    height: 50vh;
+    height: 60vh;
     min-height: 300px;
     background: skyblue;
     .text {
         font-size: 0.9rem;
         user-select: none;
+    }
+    div {
+        margin: 15px 0px;
     }
 }
 .abtitle {
@@ -338,7 +341,7 @@ h1 {
 }
 @include tabletMore {
     .main1 {
-        height: 40vh;
+        height: 80vh;
         .inner .text {
             font-size: 1.8rem;
         }
@@ -406,12 +409,14 @@ h1 {
     z-index: 3;
 }
 .main2 {
-    height: 26vh;
+    height: 44vh;
     min-height: 220px;
     background: #fff;
+    border-bottom: 1px solid black;
 }
 .skill {
     @include flex($fd: column);
+    padding: 20px 0px;
 }
 .autoslide1 {
     position: absolute;
@@ -426,7 +431,7 @@ h1 {
     align-items: center;
     animation-fill-mode: forwards;
     animation-name: slidelaft;
-    margin-top: 180px;
+    margin-top: 370px;
     &:hover {
         animation-play-state: paused;
     }
@@ -498,7 +503,7 @@ h1 {
     top: 50px;
     user-select: none;
     min-height: 100vh;
-    background: rgb(170, 252, 94);
+    background: rgb(255, 255, 255);
 }
 .pjtitle {
     @include flex($fd: column, $jc: flex-start);
@@ -513,7 +518,7 @@ h1 {
     }
 }
 .section {
-    @include flex($fd: column);
+    @include flex($fd: column, $ai: flex-start);
     width: 100vw;
     height: 80vh;
     border-right: 1px solid grey;
@@ -522,7 +527,7 @@ h1 {
     @include flex($jc: flex-start);
     padding-top: 100px;
     height: 90vh;
-    background: rgb(170, 252, 94);
+    background: rgb(255, 255, 255);
 }
 
 .swiper {
@@ -534,7 +539,7 @@ h1 {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #777777;
+    background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,19 +561,24 @@ h1 {
     display: none;
     font-size: 0.8rem;
     p {
-        margin: 5px;
+        margin: 15px;
         font-weight: 700;
-        text-shadow: 1px 1px #fff;
+        text-shadow: 1px 1px gray;
     }
 }
 .pjtext {
     h1 {
-        text-shadow: 1px 1px #fff;
+        text-shadow: 1px 1px gray;
+        border-bottom: 2px solid gray;
+        display: inline-block;
     }
     b {
         margin: 5px;
         font-weight: 700;
-        text-shadow: 1px 1px #fff;
+        text-shadow: 1px 1px gray;
+    }
+    div {
+        margin: 16px 0px;
     }
 }
 @include mobileMore {
@@ -600,7 +610,7 @@ h1 {
             width: 55%;
         }
         .inner div {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
     }
 }
@@ -612,9 +622,10 @@ h1 {
     background: #333;
 }
 .pjtext {
-    @include flex();
-    height: 20vh;
+    @include flex($ai: flex-start);
+    height: 70vh;
     font-size: 1rem;
+    line-height: 1.8;
     h1 {
         font-size: 2rem;
         margin: 10px 0px;
@@ -628,15 +639,16 @@ h1 {
 // 추가
 #topbutten {
     @include flex();
-    font-size: 0.8rem;
-    width: 45px;
-    height: 45px;
+    color: white;
+    font-size: 1.1rem;
+    width: 55px;
+    height: 55px;
     position: fixed;
     opacity: 1;
     bottom: 10px;
     right: 10px;
     border-radius: 50%;
-    background: #ffffffcc;
+    background: #000000;
 }
 .icon {
     width: 80px;
@@ -685,4 +697,59 @@ h1 {
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgb(127, 127, 128);
+}
+.pjbutoon {
+    @include flex($jc: flex-start);
+    position: absolute;
+    bottom: 80px;
+    div {
+        margin-left: 10px;
+    }
+    .link .video {
+        font-size: 1.2rem;
+        color: white;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+#tooltep {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: #77777777;
+    z-index: 7;
+    #close {
+        @include flex();
+        position: absolute;
+        background: rgb(255, 199, 114);
+        font-size: 1.5rem;
+        font-weight: 800;
+        width: 50px;
+        height: 50px;
+        right: 10vw;
+        top: 10vh;
+        text-shadow: 1px 1px white;
+        cursor: pointer;
+    }
+}
+.tvideo {
+    @include flex();
+    background: rgb(255, 255, 255);
+    height: 80vh;
+    width: 80vw;
+    iframe {
+        height: 80%;
+        width: 80%;
+    }
+}
+
+.codepo {
+    background: #92929273;
+    width: 50px;
+    border-radius: 15%;
 }
