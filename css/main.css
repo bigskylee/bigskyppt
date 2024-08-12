@@ -86,9 +86,11 @@ h1 {
   font-size: 1rem;
 }
 #header .hade {
+  height: 80px;
   background: white;
 }
 #header .hade .inner {
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -815,6 +817,7 @@ h1 {
 }
 
 .codepo {
+  font-size: 1.1rem;
   background: rgba(146, 146, 146, 0.4509803922);
   width: 50px;
   border-radius: 15%;

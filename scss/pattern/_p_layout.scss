@@ -79,8 +79,10 @@ h1 {
     z-index: 5;
     font-size: 1rem;
     .hade {
+        height: 80px;
         background: white;
         .inner {
+            padding-top: 20px;
             display: flex;
             justify-content: space-between;
         }
@@ -749,6 +751,7 @@ h1 {
 }
 
 .codepo {
+    font-size: 1.1rem;
     background: #92929273;
     width: 50px;
     border-radius: 15%;
