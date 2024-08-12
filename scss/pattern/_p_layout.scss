@@ -2,6 +2,7 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
     //scrollbar-gutter: stable both-edges;
 }
 
@@ -599,7 +600,7 @@ h1 {
             width: 55%;
         }
         .inner div {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
     }
 }
@@ -624,6 +625,7 @@ h1 {
     }
 }
 
+// 추가
 #topbutten {
     @include flex();
     font-size: 0.8rem;
