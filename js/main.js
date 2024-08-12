@@ -235,11 +235,11 @@ logo.addEventListener('mouseleave', () => {
 
 document.getElementById('loticalvi').addEventListener('click', function () {
     var youtube = document.getElementById('youtube')
-    youtube.src = 'https://www.youtube.com/embed/iOeHC0UZUZo?si=bzQGeKtWa-m9BKL_'
+    youtube.src = 'https://www.youtube.com/embed/kNGLGrbu4ck?si=niJgIl32yGfM5Kf3'
 })
 document.getElementById('mmbookvi').addEventListener('click', function () {
     var youtube = document.getElementById('youtube')
-    youtube.src = 'https://www.youtube.com/embed/IajBRjIJc84?si=RzKukKaISWaqGgNl'
+    youtube.src = 'https://www.youtube.com/embed/lHCJjUZSnbI?si=jk3oyAi6m5Y4-47L'
 })
 
 document.getElementById('close').addEventListener('click', function () {
